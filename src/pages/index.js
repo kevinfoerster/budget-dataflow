@@ -1,5 +1,15 @@
 import React from "react"
 
-export default function Home() {
-  return <div>Hello world!</div>
+import Layout from '../components/layout/Layout'
+import Content from '../components/Content'
+
+
+
+export default function Home({location}) {
+  console.log(location)
+  return (<Layout initialData={location?.state?.hello}>
+    <pre>{JSON.stringify(location, null,2 )}</pre>
+    <Content/>
+
+  </Layout>)
 }
